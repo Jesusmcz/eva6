@@ -2,7 +2,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView
 from django.views import generic
-from .models import Paciente
+from .models import Paciente, Examen
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy 
 
@@ -11,6 +11,10 @@ from django.urls import reverse_lazy
 
 def inicio(request):
     return render (request, 'app/index.html')
+
+
+def examen(request):
+    return render (request, 'app/examen_medico.html')
 
 
 class ListaPaciente(ListView):
@@ -39,3 +43,25 @@ class EliminarPaciente(DeleteView):
     fields='__all__'
     success_url=reverse_lazy('app:lista')
     context_object_name = 'paciente'
+
+
+class ListaExamen(ListView):
+    model=Examen
+    template_name = 'app/lista_examen.html'
+    context_object_name = 'examen'
+
+
+class AgregarExamen(CreateView):
+    model=Examen
+    template_name='app/agregar_examen.html'
+    fields='__all__'
+    success_url=reverse_lazy('app:lista_examen')
+
+
+""" class EliminarExamen(DeleteView):
+    model=Examen
+    template_name='app/eliminar_examen.html'
+    fields='__all__'
+    success_url=reverse_lazy('app:lista_examen')
+    context_object_name='examen' """
+

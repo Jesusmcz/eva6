@@ -13,27 +13,24 @@
 </header>
 <body>
     {% block body%}
-    <h1>Lista de Pacientes</h1>
-    <a href="{% url 'app:crear' %}"> Agregar Paciente</a>
+    <h1>Lista de Examenes</h1>
+    <a href="{% url 'app:agregar' %}"> Agregar Examen</a>
     <div class="col-md-12" style="height: 400px;margin-left: 30%; margin-top: 5%">
     <table border="1px">
         <tr>
             <th>run</th>
             <th>nombre</th>
-            <th>apellido</th>
-            <th>edad</th>
-            <th></th>
-            <th></th>
+            <th>tipo</th>
+            <th>resultado</th>
+    
         </tr>
-        {% for elemento in paciente %}
+        {% for elemento in examen %}
         <tr>
             <th>{{ elemento.run }}</th>
             <th>{{ elemento.nombre }}</th>
-            <th>{{ elemento.apellido }}</th>
-            <th>{{ elemento.edad }}</th>
-            <th><a href="{% url 'app:editar' pk=elemento.run %}">Editar</a></th>
-            <th><a href="{% url 'app:eliminar' pk=elemento.run %}">Eliminar</a></th>
-            <th><a href="{% url 'app:lista_examen' %}">Examenes</a></th>
+            <th>{{ elemento.tipo }}</th>
+            <th>{{ elemento.resultado }}</th>
+            
         </tr>
         {% endfor %}
     </table>

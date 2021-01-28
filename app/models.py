@@ -9,4 +9,9 @@ class Paciente(models.Model):
     edad = models.IntegerField()
 
 
+class Examen(models.Model):
+    run = models.ForeignKey(Paciente, on_delete=models.CASCADE)
+    nombre = models.CharField(max_length=50)
+    tipo = models.CharField(max_length=50)
+    resultado = models.CharField(max_length=50)
 
