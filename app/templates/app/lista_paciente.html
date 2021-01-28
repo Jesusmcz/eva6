@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<header>
+    {% block barra %}
+    {{block.super}}
+    {% endblock %}
+</header>
+<body>
+    {% block body%}
+    <h1>Lista de Pacientes</h1>
+    <a href="{% url 'app:crear' %}"> Agregar Paciente</a>
+    <div class="col-md-12" style="height: 400px;margin-left: 30%; margin-top: 5%">
+    <table border="1px">
+        <tr>
+            <th>run</th>
+            <th>nombre</th>
+            <th>apellido</th>
+            <th>edad</th>
+            <th></th>
+            <th></th>
+        </tr>
+        {% for elemento in paciente %}
+        <tr>
+            <th>{{ elemento.run }}</th>
+            <th>{{ elemento.nombre }}</th>
+            <th>{{ elemento.apellido }}</th>
+            <th>{{ elemento.edad }}</th>
+            <th><a href="{% url 'app:editar' pk=elemento.run %}">Editar</a></th>
+            <th><a href="{% url 'app:eliminar' pk=elemento.run %}">Eliminar</a></th>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+    {% endblock %} 
+</body>
+<footer>
+    {% block footer %}
+    {{block.super}}
+    {% endblock %}
+</footer>
+</html>
