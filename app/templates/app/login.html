@@ -18,9 +18,9 @@
   </head>
   <header>
     {% block barra %}
-    {{block.super}}
+    
     {% endblock %}
-</header>
+  </header>
   <body>
     {% block body%}
     <!-- Navigation Bar -->
@@ -45,7 +45,7 @@
             <li class="nav-item">
               <a
                 class="nav-link scroll-trigger" 
-                href="../sitioweb/index.html">
+                href="{% url 'app:inicio' %}">
                   Inicio
               </a>
             </li>
