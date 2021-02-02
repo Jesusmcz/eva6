@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base2.html" %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +7,12 @@
     <title>Document</title>
 </head>
 <header>
-    {% block barra %}
-    {{block.super}}
+    {% block barra2 %}
+    {{ block.super }}
     {% endblock %}
 </header>
 <body>
-    {% block body%}
+    {% block body %}
         <div class="box">
           <h1>Agregue el paciente</h1>
         </div>

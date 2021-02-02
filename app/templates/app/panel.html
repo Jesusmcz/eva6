@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base2.html" %}
 <!doctype html>
 <html lang="es">
   <head>
@@ -17,71 +17,12 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <header>
-    {% block barra %}
-    
+    {% block barra2 %}
+    {{ block.super }}
     {% endblock %}
   </header>
   <body>
-    {% block body%}
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-      <a class="navbar-brand" href="#">ControlMed</a>
-
-      <!-- Navigation Bar Hamburger-->
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navigation"
-        aria-expanded="false"
-        aria-controls="navigation" 
-        aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <!-- End Navigation Bar Hamburger -->
-      <!-- Navigation Links -->
-      <div class="collapse navbar-collapse" id="navigation">
-         <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a
-                class="nav-link scroll-trigger" 
-                href="{% url 'app:inicio' %}">
-                  Inicio
-              </a>
-            </li>
-            <li class="nav-item">
-              <a 
-                class="nav-link scroll-trigger" 
-                href="../sitioweb/paciente.html">
-                  Paciente
-              </a>
-            </li>
-            <li class="nav-item">
-              <a 
-                class="nav-link scroll-trigger" 
-                href="../sitioweb/calendario_citas.html">
-                  Citas
-              </a>
-            </li>
-            <li class="nav-item">
-              <a 
-                class="nav-link scroll-trigger" 
-                href="../sitioweb/medicamentos.html">
-                  Medicamentos
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link scroll-trigger" 
-                href="../sitioweb/examen_medico.html">
-                  Examenes Medicos
-              </a>
-            </li>
-                          
-      </div>
-      <!-- Navigation Links -->
-    </nav>
-    <!-- End Navigation Bar -->
+    {% block body %}
 
     <!-- Section: Principal -->
     <div class="container-fluid bg-principal" id="principal">

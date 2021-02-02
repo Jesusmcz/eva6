@@ -61,8 +61,8 @@
             <li class="nav-item">
               <a 
                 class="nav-link scroll-trigger" 
-                href="#equipo">
-                  Equipo
+                href="#contacto">
+                  Contacto
               </a>
             </li>
             {% if user.is_authenticated %}
@@ -73,7 +73,7 @@
                   Cerrar Sesion
               </a>
             </li>
-            <li><a class="nav-link scroll-trigger" href="#">@{{ user.username }}</a></li>
+            <li><a class="nav-link scroll-trigger" href="{% url 'app:login' %}">@{{ user.username }}</a></li>
             {% else %}
             <li class="nav-item">
               <a
@@ -163,10 +163,10 @@
             <div class="media-body">
               <h5 class="mt-0">Enlaces Rapidos</h5>
               <ul>
-                <li><a href="www.minsal.cl">Minsal</a></li>
-                <li><a href="www.fonasa.cl">Fonasa</a></li>
-                <li><a href="www.milicenciamedica.cl">Compin</a></li>
-                <li><a href="www.saludresponde.cl">Salud Responde</a></li>
+                <li><a href="http://www.minsal.cl">Minsal</a></li>
+                <li><a href="http://www.fonasa.cl">Fonasa</a></li>
+                <li><a href="http://www.milicenciamedica.cl">Compin</a></li>
+                <li><a href="http://www.saludresponde.cl">Salud Responde</a></li>
               </ul>
             </div>
           </div>
@@ -178,10 +178,10 @@
             <div class="media-body">
               <h5 class="mt-0">Siguenos en nuestras redes sociales</h5>
               <ul>
-                <li><a href="www.facebook.com">Facebook</a></li>
-                <li><a href="www.twitter.com">Twitter</a></li>
-                <li><a href="www.instagram.com">Instagram</a></li>
-                <li><a href="www.youtube.com">Youtube</a></li>
+                <li><a href="http://www.facebook.com">Facebook</a></li>
+                <li><a href="http://www.twitter.com">Twitter</a></li>
+                <li><a href="http://www.instagram.com">Instagram</a></li>
+                <li><a href="http://www.youtube.com">Youtube</a></li>
               </ul>
             </div>
           </div>
