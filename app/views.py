@@ -26,13 +26,33 @@ class ListaPaciente(ListView):
     template_name = 'app/lista_paciente.html'
     context_object_name = 'paciente'
 
+lista=[]
+class PacientePersonalizado(View):
+    def get(self, request, pk):
+        resultado=list(Examen.objects.values().all())
+        for elemento in resultado:
+            resultado = elemento.get('resultado')
+            lista.append(resultado)
+        lista_paciente =list(Paciente.objects.filter(run=pk).values())
+        context = {'paciente': lista_paciente, 'run':pk, 'lista':lista}
+        return render(request, 'app/paciente_per.html', context=context)
 
+def usuario(usuario):
+    if usuario.profile.rol == 'Usuarios':
+        validacion = True
+    else:
+        validacion = False
+    return validacion   
 
-class CrearPaciente(CreateView):
+class CrearPaciente(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     model=Paciente
     template_name = 'app/crear_paciente.html'
     fields='__all__'
     success_url= reverse_lazy('app:lista')
+    login_url='app:login'
+
+    def test_func(self):
+        return usuario(self.request.user)
 
 
 class EditarPaciente(UpdateView):

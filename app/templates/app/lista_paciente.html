@@ -33,7 +33,7 @@
             <th>{{ elemento.edad }}</th>
             <th><a href="{% url 'app:editar' pk=elemento.run %}">Editar</a></th>
             <th><a href="{% url 'app:eliminar' pk=elemento.run %}">Eliminar</a></th>
-            <th><a href="{% url 'app:lista_examen' %}">Examenes</a></th>
+            <th><a href="{% url 'app:paciente_per' pk=elemento.run %}">Examenes</a></th>
         </tr>
         {% endfor %}
     </table>

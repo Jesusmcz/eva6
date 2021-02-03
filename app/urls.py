@@ -16,5 +16,6 @@ urlpatterns = [
     path('agregar_med', views.AgregarMedicamentos.as_view(), name='agregar_med'),
     path('eliminar_med', views.EliminarMedicamento.as_view(), name='eliminar_med'),
     path('editar_med', views.EditarMedicamento.as_view(), name='editar_med'),
+    path('<int:pk>/paciente_per', views.PacientePersonalizado.as_view(), name='paciente_per'),
    
 ]
