@@ -37,22 +37,22 @@ class PacientePersonalizado(View):
         context = {'paciente': lista_paciente, 'run':pk, 'lista':lista}
         return render(request, 'app/paciente_per.html', context=context)
 
-def usuario(usuario):
+""" def usuario(usuario):
     if usuario.profile.rol == 'Usuarios':
         validacion = True
     else:
         validacion = False
-    return validacion   
+    return validacion    """
 
-class CrearPaciente(LoginRequiredMixin, UserPassesTestMixin, CreateView):
+class CrearPaciente(LoginRequiredMixin, CreateView):
     model=Paciente
     template_name = 'app/crear_paciente.html'
     fields='__all__'
     success_url= reverse_lazy('app:lista')
     login_url='app:login'
-
+""" 
     def test_func(self):
-        return usuario(self.request.user)
+        return usuario(self.request.user) """
 
 
 class EditarPaciente(UpdateView):
